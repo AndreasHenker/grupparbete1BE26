@@ -1,13 +1,26 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #e9e9e9;
+    background-color: transparent;
 }
 
 .quiz-container {
     width: 90%;
     max-width: 1200px;
     margin: 30px auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quiz-logo {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
 }
 
 .top-row {
@@ -136,6 +149,14 @@ body {
     .quiz-container {
         width: 95%;
         margin: 20px auto;
+    }
+
+    .quiz-header {
+        margin-bottom: 15px;
+    }
+
+    .quiz-logo {
+        max-width: 320px;
     }
 
     .top-row {
