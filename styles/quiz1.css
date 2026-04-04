@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9e9e9;
+}
+
+.quiz-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.top-row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.progress-circle {
+    width: 180px;
+    height: 180px;
+    border: 5px solid gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.question-box {
+    flex: 1;
+    min-height: 180px;
+    border: transparent;    /* border removed */
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* answers */
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.answer-btn {
+    height: 260px;
+    font-size: 3em;
+    border: transparent;    /* border removed */
+    background-color: #72a2f5;
+    cursor: pointer;
+}
+
+.answer-btn:hover {
+    opacity: 0.7;
+}
+
+.answer-btn.correct {
+    background-color: #7ed957;
+}
+
+.answer-btn.wrong {
+    background-color: #ff6b6b;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* nedre del */
+.bottom-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score {
+    font-size: 72px;
+    color: #666;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.next-btn {
+    width: 200px;
+    height: 80px;
+    font-size: 28px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-btn::after {
+    content: " →";
+    font-size: 60px;
+}
+
+.next-btn:disabled {
+    color: #999;
+    border-color: #999;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+/* mobile-first */
+@media (max-width: 900px) {
+    .quiz-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .top-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .question-box {
+        width: 100%;
+        min-height: 120px;
+        font-size: 24px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .progress-circle {
+        width: 110px;
+        height: 110px;
+        font-size: 28px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .answer-btn {
+        width: 100%;
+        height: 100px;
+        font-size: 24px;
+    }
+
+    .bottom-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 25px;
+    }
+
+    .score {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .next-btn {
+        width: 140px;
+        height: 60px;
+        font-size: 22px;
+    }
+    .next-btn::after {
+        content: " →";
+        font-size: 40px;
+    }   
+    
+}
+
