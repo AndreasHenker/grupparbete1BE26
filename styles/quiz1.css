@@ -56,6 +56,7 @@ body {
     font-weight: bold;
     padding: 20px;
     box-sizing: border-box;
+    margin-right: 190px;
 }
 
 
@@ -72,17 +73,18 @@ body {
     border: transparent;    /* border removed */
     background-color: #72a2f5;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .answer-btn:hover {
     opacity: 0.7;
 }
 
-.answer-btn.correct {
+.correct {
     background-color: #7ed957;
 }
 
-.answer-btn.wrong {
+.wrong {
     background-color: #ff6b6b;
 }
 
@@ -171,6 +173,7 @@ body {
         font-size: 24px;
         padding: 15px;
         border-radius: 20px;
+        margin-left:190px; /* Evens out margin right before mobile adaption */
     }
 
     .progress-circle {
@@ -221,4 +224,3 @@ body {
     }   
     
 }
-

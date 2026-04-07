@@ -65,7 +65,7 @@ const questionBank = [
 
 const quiz = {
     title: "Javascript Quiz",
-    currentQuestion: 9,
+    currentQuestion: 0,
     score: 0,
     hiScore: 0,
     questionBank: [...questionBank]
