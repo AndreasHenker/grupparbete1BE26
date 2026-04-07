@@ -68,7 +68,8 @@ const quiz = {
     currentQuestion: 0,
     score: 0,
     hiScore: 0,
-    questionBank: [...questionBank]
+    questionBank: [...questionBank],
+    trackRecord: []
 }
 
 console.log(quiz);
