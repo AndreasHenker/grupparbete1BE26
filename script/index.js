@@ -1,0 +1,1 @@
+const answers = document.getElementById("answers");
