@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizspel</title>
+    <link rel="stylesheet" href="styles/quiz1.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+
+        <header class="quiz-header">
+            <img src="images/logo-grit.png" alt="Grit logo" class="quiz-logo">
+        </header>
+
+        <div class="top-row">
+            <div class="progress-circle" id="progress">1/10</div>
+
+            <div class="question-box" id="question">
+                Frågor
+            </div>
+        </div>
+
+        <div class="answers" id="answers">
+            <button class="answer-btn">Answer 1</button>
+            <button class="answer-btn">Answer 2</button>
+            <button class="answer-btn">Answer 3</button>
+            <button class="answer-btn">Answer 4</button>
+        </div>
+
+        <div class="bottom-row">
+            <div class="score" id="score">Score: 0%</div>
+
+            <div class="buttons">
+                <button class="next-btn" id="nextBtn" disabled>Nästa</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="scripts/quiz1.js"></script>
+</body>
+
+</html>
