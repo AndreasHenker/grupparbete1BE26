@@ -6,15 +6,25 @@ const nextBtn = document.getElementById("nextBtn");
 const scoreDisplay = document.getElementById("score");
 const finalResultContainer = document.getElementById("result");
 const quizContainer = document.getElementById("quiz-container");
+const result = document.getElementById("result");
+const resultScore = document.getElementById("result-score");
+const restartBtn = document.getElementById("restartBtn")
+
 
 function finalResult(){
     quizContainer.style.display = "none";
-    finalResultContainer.textContent = "";
+    result.classList.remove("hidden");
     
     //haär ska vi skapa resultatsidan
-    quiz.trackRecord.forEach(element => {
-        finalResultContainer.textContent += (element[0] === element[1]);
-    });
+    // quiz.trackRecord.forEach(element => {
+    //  finalResultContainer.textContent += (element[0] === element[1]);
+    //});
+
+    const correct = quiz.trackRecord.filter(r => r[0] === r[1]).length;
+    const total = quiz.questionBank.length;
+    const percent = Math.round((correct / total) * 100);
+
+    resultScore.textContent = `Du fick ${correct} av ${total} (${percent}%)`;
 }
 
 function updateQuestion(){
@@ -95,4 +105,3 @@ function superQuiz(start = 0){
 
 
 superQuiz();
-
