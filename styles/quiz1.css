@@ -137,7 +137,27 @@ body {
     cursor: not-allowed;
 }
 
+.result{
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 32px;
+}
 
+.hidden{
+    display: none;
+}
+
+#restartBtn{
+    margin-top: 20px;
+    padding: 15px 25px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+    background: white;
+}
 
 
 
