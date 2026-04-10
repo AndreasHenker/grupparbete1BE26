@@ -4,6 +4,18 @@ const progress = document.getElementById("progress");
 const questionText = document.getElementById("question");
 const nextBtn = document.getElementById("nextBtn");
 const scoreDisplay = document.getElementById("score");
+const finalResultContainer = document.getElementById("result");
+const quizContainer = document.getElementById("quiz-container");
+
+function finalResult(){
+    quizContainer.style.display = "none";
+    finalResultContainer.textContent = "";
+    
+    //haär ska vi skapa resultatsidan
+    quiz.trackRecord.forEach(element => {
+        finalResultContainer.textContent += (element[0] === element[1]);
+    });
+}
 
 function updateQuestion(){
     questionText.textContent = quiz.questionBank[quiz.currentQuestion].question;
@@ -23,14 +35,15 @@ answers.addEventListener('submit', (event)=>{
     let correctAnswer = quiz.questionBank[quiz.currentQuestion].options[quiz.questionBank[quiz.currentQuestion].correctIndex];
     if (answerGiven === correctAnswer){
         console.log ("Rätt");
-        quiz.trackRecord.push(true);
+        //quiz.trackRecord.push(true);
+        
         quiz.score ++;
         event.submitter.classList.add("correct");
     }
     else {
         console.log("Fel");
         event.submitter.classList.add("wrong");
-        quiz.trackRecord.push(false);
+        //quiz.trackRecord.push(false);
         //markera rätta elternativet i grönt
         for (let i = 0; i < 4; i++){
             if (questionOptions[i].textContent === correctAnswer) {
@@ -38,6 +51,7 @@ answers.addEventListener('submit', (event)=>{
             }
         }
     }
+    quiz.trackRecord.push([answerGiven, correctAnswer]);
     quiz.questionBank[quiz.currentQuestion].answered = true;
 
     nextBtn.disabled = false;
@@ -74,7 +88,11 @@ function superQuiz(start = 0){
         //window.alert(quiz.currentQuestion)
         updateQuestion();
     })
+    if (quiz.currentQuestion >= quiz.questionBank.length){
+        finalResult();
+    }
 }
 
 
 superQuiz();
+
