@@ -1,20 +1,25 @@
+<!-- Author: Grit Academy: Abdalla A, Andreas H, Jeongsook P -->
+<!-- update: 2026-04-12 -->
+
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
-    <meta author="Abdalla A, Jeongsook P, Andreas H">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/quiz1.css">
+    <link rel="stylesheet" href="styles/final.css">
     <title>Quiz Spel grupp 2</title>
 </head>
+
 <body>
+    <!-- Header -->
     <header class="quiz-header">
         <img src="images/logo-grit.png" alt="Grit logo" class="quiz-logo">
     </header>
-    
+
     <main class="quiz-container" id="quiz-container">
 
-
+        <!-- Progress-->
         <div class="top-row">
             <div class="progress-circle"><span id="progress">1</span>/<span id="total">10</span></div>
 
@@ -23,13 +28,15 @@
             </div>
         </div>
 
-        <form class="answers" id="answers"> 
+        <!-- Answer Buttons -->
+        <form class="answers" id="answers">
             <button class="answer-btn">Answer 1</button>
             <button class="answer-btn">Answer 2</button>
             <button class="answer-btn">Answer 3</button>
             <button class="answer-btn">Answer 4</button>
         </form>
-
+         
+        <!-- Score and Next Buttons -->
         <div class="bottom-row">
             <div class="score" id="score">Score: 0%</div>
 
@@ -40,16 +47,21 @@
 
     </main>
 
+    <!-- Result Section -->
     <section id="result" class="result hidden">
         <h2>Resultat</h2>
         <p id="result-score"></p>
+
         <button id="restartBtn"> Starta om</button>
-        <div id="summary"></div>
+
+        <div class="summary-item" id="summary"></div>
     </section>
 
+    <script src="scripts/objects-final.js"></script>
+    <script src="scripts/final.js"></script>
+
 </body>
-<script src="script/objects.js"></script>
-<script src="script/index.js"></script>
+
 
 
 </html>
