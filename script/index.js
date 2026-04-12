@@ -10,7 +10,24 @@ const quizContainer = document.getElementById("quiz-container");
 const result = document.getElementById("result");
 const resultScore = document.getElementById("result-score");
 const restartBtn = document.getElementById("restartBtn")
+const summary = document.getElementById("summary")
 
+function generateSummary(){
+    summary.innerHTML = "<h3>Detaljerat resultat:</h3>";
+    let feedBack = "";
+    for (let i = 0; i < quiz.trackRecord.length; i++) {
+        let record = quiz.trackRecord[i];
+        feedBack += `
+        <div class="result-item">
+            <h5>Fråga ${i + 1}:</h5>
+            <h4>${quiz.questionBank[i].question}</h4>
+            <p> Ditt svar var: <strong>${record[0]===record[1] ? 'rätt! 🤩' : 'fel! 😩'}</strong>,</p>
+            <p>Rätt svar: <em>${quiz.questionBank[i].options[quiz.questionBank[i].correctIndex]}</em></p>
+            <hr>
+        </div>`;
+    };
+    summary.innerHTML += feedBack;
+}
 
 function finalResult(){
     //quizContainer.style.display = "none";
@@ -23,6 +40,7 @@ function finalResult(){
     const percent = Math.round((correct / total) * 100);
 
     resultScore.textContent = `Du fick ${correct} av ${total} (${percent}%)`;
+    generateSummary();
 }
 
 function updateQuestion(){
