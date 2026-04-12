@@ -59,6 +59,11 @@ function updateQuestion(){
 
 function restartQuiz(){
     quiz.newQuiz(); //nolställer quiz, så man kan återanvända det
+
+    for (let i = 0; i < 4; i++){
+            questionOptions[i].disabled = false;
+        }
+
     result.classList.add("hidden");
     quizContainer.classList.remove("hidden");
     updateQuestion();
