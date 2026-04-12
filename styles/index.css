@@ -1,3 +1,13 @@
+/* global accessbility */
+:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 6px rgba(114, 162, 245, 0.35);
+    border-radius: 8px;
+}
+
+
+/* general styling */
 html {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -9,12 +19,7 @@ body {
     background-color: #fffcfc;
 }
 
-.quiz-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 30px auto;
-}
-
+/* ----------------------------------------- */
 .quiz-header {
     display: flex;
     justify-content: center;
@@ -25,6 +30,14 @@ body {
     max-width: 300px;
     height: auto;
     display: block;
+}
+
+
+/* quiz container */
+.quiz-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
 }
 
 .top-row {
@@ -61,6 +74,8 @@ body {
     padding: 15px;
     margin: 0;
 }
+/* ----------------------------------------- */
+
 
 /* answers */
 .answers {
@@ -94,6 +109,7 @@ body {
     cursor: not-allowed;
     opacity: 0.6;
 }
+/* ----------------------------------------- */
 
 
 /* nedre del */
@@ -167,7 +183,8 @@ section {
     font-size: 2rem;
 }
 
-
+/* ----------------------------------------- */
+/* Slutresultat */
 #summary {
     width: 90%;
     margin: 30px auto;
@@ -186,7 +203,7 @@ section {
 }
 
 
-
+/* ----------------------------------------- */
 /* mobile-first */
 @media (max-width: 900px) {
     .quiz-container {
