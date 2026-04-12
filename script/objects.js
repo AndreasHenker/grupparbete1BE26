@@ -69,7 +69,11 @@ const quiz = {
     score: 0,
     hiScore: 0,
     questionBank: [...questionBank],
-    trackRecord: []
+    trackRecord: [],
+    newQuiz: function() {
+        this.currentQuestion = 0;
+        this.score = 0;
+        this.questionBank = [...questionBank];
+        this.trackRecord = [];
+    }
 }
-
-console.log(quiz);

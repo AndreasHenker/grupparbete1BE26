@@ -12,14 +12,11 @@ const restartBtn = document.getElementById("restartBtn")
 
 
 function finalResult(){
-    quizContainer.style.display = "none";
+    //quizContainer.style.display = "none";
     result.classList.remove("hidden");
+    quizContainer.classList.add("hidden");
     
-    //haär ska vi skapa resultatsidan
-    // quiz.trackRecord.forEach(element => {
-    //  finalResultContainer.textContent += (element[0] === element[1]);
-    //});
-
+    //här ska vi skapa resultatsidan
     const correct = quiz.trackRecord.filter(r => r[0] === r[1]).length;
     const total = quiz.questionBank.length;
     const percent = Math.round((correct / total) * 100);
@@ -39,22 +36,26 @@ function updateQuestion(){
     progress.textContent = quiz.currentQuestion + 1;
 }
 
+function restartQuiz(){
+    quiz.newQuiz(); //nolställer quiz, så man kan återanvända det
+    result.classList.add("hidden");
+    quizContainer.classList.remove("hidden");
+    updateQuestion();
+   
+}
+
 answers.addEventListener('submit', (event)=>{
     event.preventDefault();
     let answerGiven = event.submitter.textContent;
     let correctAnswer = quiz.questionBank[quiz.currentQuestion].options[quiz.questionBank[quiz.currentQuestion].correctIndex];
     if (answerGiven === correctAnswer){
         console.log ("Rätt");
-        //quiz.trackRecord.push(true);
-        
         quiz.score ++;
         event.submitter.classList.add("correct");
     }
     else {
         console.log("Fel");
         event.submitter.classList.add("wrong");
-        //quiz.trackRecord.push(false);
-        //markera rätta elternativet i grönt
         for (let i = 0; i < 4; i++){
             if (questionOptions[i].textContent === correctAnswer) {
                 questionOptions[i].classList.add("correct");
@@ -71,36 +72,31 @@ answers.addEventListener('submit', (event)=>{
 })
 
 
-function superQuiz(start = 0){
 
-    updateQuestion();
-   
+function superQuiz(){
+    restartQuiz();
     //next-button
     nextBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        
         if (quiz.currentQuestion < quiz.questionBank.length-1) {
-            
             quiz.currentQuestion++;
-            
-            //enable svarsbtn
-        for (let i = 0; i < 4; i++){
+            for (let i = 0; i < 4; i++){
             questionOptions[i].disabled = false;
             }
         }
 
         else {
             scoreDisplay.textContent = "Score: " + Math.round((quiz.score / quiz.questionBank.length) * 100) + "%";
-            window.alert ("Quizet är slut. Du fick " + quiz.score + " poäng.");
+            finalResult();
         }
-        //disable next btn
         nextBtn.disabled = true;
-        //window.alert(quiz.currentQuestion)
         updateQuestion();
-    })
-    if (quiz.currentQuestion >= quiz.questionBank.length){
-        finalResult();
-    }
+    });
+    //restart-button
+    restartBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        restartQuiz();
+    });
 }
 
 
