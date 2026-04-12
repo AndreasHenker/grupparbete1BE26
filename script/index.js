@@ -1,6 +1,7 @@
 const answers = document.getElementById("answers");
 const questionOptions = document.getElementsByClassName("answer-btn");
 const progress = document.getElementById("progress");
+const totalQuestions = document.getElementById("total");
 const questionText = document.getElementById("question");
 const nextBtn = document.getElementById("nextBtn");
 const scoreDisplay = document.getElementById("score");
@@ -27,8 +28,10 @@ function finalResult(){
 function updateQuestion(){
     questionText.textContent = quiz.questionBank[quiz.currentQuestion].question;
     scoreDisplay.textContent = "Score: " + Math.round((quiz.score / quiz.questionBank.length) * 100) + "%";
+    totalQuestions.textContent = quiz.questionBank.length;
     
-    for (let i = 0; i < quiz.questionBank[quiz.currentQuestion].options.length; i++) {
+    const numberOfOptions = quiz.questionBank[quiz.currentQuestion].options.length;
+    for (let i = 0; i < numberOfOptions; i++) {
             questionOptions[i].textContent = quiz.questionBank[quiz.currentQuestion].options[i];
             questionOptions[i].classList.remove("correct","wrong")
     }
