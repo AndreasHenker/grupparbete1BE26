@@ -1,0 +1,264 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #fffcfc;
+}
+
+.quiz-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quiz-logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+.top-row {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.progress-circle {
+    width: 180px;
+    height: 180px;
+    border: 5px solid gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.question-box {
+    width: 100%;
+    min-height: 120px;
+    border: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0;
+}
+
+/* answers */
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.answer-btn {
+    height: 260px;
+    border: transparent;
+    background-color: #72a2f5;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 2.5rem;
+}
+
+.answer-btn:hover {
+    opacity: 0.7;
+}
+
+.correct {
+    background-color: #7ed957;
+}
+
+.wrong {
+    background-color: #ff6b6b;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* nedre del */
+.bottom-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score {
+    color: #666;
+    font-size: 2.5rem;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.next-btn {
+    width: 200px;
+    height: 80px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.next-btn::after {
+    content: " →";
+}
+
+.next-btn:disabled {
+    color: #999;
+    border-color: #999;
+    cursor: not-allowed;
+}
+
+section {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fffcfc;
+}
+
+.result {
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#restartBtn {
+    margin-top: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+    background: white;
+    font-size: 2rem;
+}
+
+
+#summary {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fffcfc;
+}   
+
+.summary-item { 
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #d5d3d3;
+    text-align: left;
+}
+
+
+
+/* mobile-first */
+@media (max-width: 900px) {
+    .quiz-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .quiz-header {
+        margin-bottom: 15px;
+    }
+
+    .quiz-logo {
+        max-width: 320px;
+    }
+
+    .top-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .question-box {
+        width: 100%;
+        min-height: 120px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .progress-circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .answer-btn {
+        width: 100%;
+        height: 100px;
+    }
+
+    .bottom-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 25px;
+    }
+
+    .score {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .next-btn {
+        width: 140px;
+        height: 60px;
+    }
+
+    .next-btn::after {
+        content: " →";
+    }
+
+
+
+}
