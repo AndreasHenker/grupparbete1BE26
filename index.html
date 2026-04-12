@@ -1,5 +1,4 @@
 <!-- Author: Grit Academy: Abdalla A, Andreas H, Jeongsook P -->
-<!-- update: 2026-04-12 -->
 
 <!DOCTYPE html>
 <html lang="sv">
@@ -21,40 +20,40 @@
 
         <!-- Progress-->
         <div class="top-row">
-            <div class="progress-circle"><span id="progress">1</span>/<span id="total">10</span></div>
+            <div class="progress-circle" aria-live="polite" aria-label="progress i quizet"><span id="progress">1</span>/<span id="total">10</span></div>
 
-            <div class="question-box" id="question">
+            <div class="question-box" id="question" aria-live="polite" aria-label="Aktuell fråga">
                 Frågor
             </div>
         </div>
 
         <!-- Answer Buttons -->
-        <form class="answers" id="answers">
-            <button class="answer-btn">Answer 1</button>
-            <button class="answer-btn">Answer 2</button>
-            <button class="answer-btn">Answer 3</button>
-            <button class="answer-btn">Answer 4</button>
+        <form class="answers" id="answers" aria-labelledby="question">  
+            <button class="answer-btn" type="submit" aria-label="Svar 1">Answer 1</button>
+            <button class="answer-btn" type="submit" aria-label="Svar 2">Answer 2</button>
+            <button class="answer-btn" type="submit" aria-label="Svar 3">Answer 3</button>
+            <button class="answer-btn" type="submit" aria-label="Svar 4">Answer 4</button>
         </form>
          
         <!-- Score and Next Buttons -->
         <div class="bottom-row">
-            <div class="score" id="score">Score: 0%</div>
+            <div class="score" id="score" aria-live="polite" aria-label="actual result">Poäng: 0%</div>
 
             <div class="buttons">
-                <button class="next-btn" id="nextBtn" disabled>Nästa</button>
+                <button class="next-btn" aria-label="Gå till nästa fråga" id="nextBtn" disabled>Nästa</button>
             </div>
         </div>
 
     </main>
 
     <!-- Result Section -->
-    <section id="result" class="result hidden">
+    <section id="result" class="result hidden" aria-labelledby="result-heading">
         <h2>Resultat</h2>
         <p id="result-score"></p>
 
-        <button id="restartBtn"> Starta om</button>
+        <button id="restartBtn" aria-label="Starta om quizet"> Starta om</button>
 
-        <div class="summary-item" id="summary"></div>
+        <div class="summary-item" id="summary" aria-live="polite"></div>
     </section>
 
     <script src="scripts/objects.js"></script>
@@ -62,5 +61,7 @@
 
 </body>
 
-    
 </html>
+
+<!--aria-live = "polite" för att automatiskt läsa upp ändringar i skärmen ; 
+väntar på att användaren är klar med att läsa upp   -->
