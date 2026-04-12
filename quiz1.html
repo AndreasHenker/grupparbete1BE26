@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="quiz-container" id="quiz-container">
+    <header class="quiz-header">
+        <img src="images/logo-grit.png" alt="Grit logo" class="quiz-logo">
+    </header>
+    <main class="quiz-container" id="quiz-container">
 
-        <header class="quiz-header">
-            <img src="images/logo-grit.png" alt="Grit logo" class="quiz-logo">
-        </header>
 
         <div class="top-row">
             <div class="progress-circle"><span id="progress">1</span>/10</div>
@@ -38,15 +38,16 @@
             </div>
         </div>
 
-    </div>
-    <div id="result" class="result hidden">
+    </main>
+
+    <section id="result" class="result hidden">
         <h2>Resultat</h2>
         <p id="result-score"></p>
         <button id="restartBtn"> Starta om</button>
-    </div>
+    </section>
 
-    <script src="script/objects.js"></script>
-    <script src="script/index.js"></script>
 </body>
+<script src="script/objects.js"></script>
+<script src="script/index.js"></script>
 
 </html>

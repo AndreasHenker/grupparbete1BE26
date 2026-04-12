@@ -44,38 +44,36 @@ function restartQuiz(){
    
 }
 
-answers.addEventListener('submit', (event)=>{
-    event.preventDefault();
-    let answerGiven = event.submitter.textContent;
-    let correctAnswer = quiz.questionBank[quiz.currentQuestion].options[quiz.questionBank[quiz.currentQuestion].correctIndex];
-    if (answerGiven === correctAnswer){
-        console.log ("Rätt");
-        quiz.score ++;
-        event.submitter.classList.add("correct");
-    }
-    else {
-        console.log("Fel");
-        event.submitter.classList.add("wrong");
-        for (let i = 0; i < 4; i++){
-            if (questionOptions[i].textContent === correctAnswer) {
-                questionOptions[i].classList.add("correct");
-            }
-        }
-    }
-    quiz.trackRecord.push([answerGiven, correctAnswer]);
-    quiz.questionBank[quiz.currentQuestion].answered = true;
-
-    nextBtn.disabled = false;
-    for (let i = 0; i < 4; i++){
-        questionOptions[i].disabled = true;
-    }
-})
-
-
-
 function superQuiz(){
     restartQuiz();
     //next-button
+    answers.addEventListener('submit', (event)=>{
+        event.preventDefault();
+        let answerGiven = event.submitter.textContent;
+        let correctAnswer = quiz.questionBank[quiz.currentQuestion].options[quiz.questionBank[quiz.currentQuestion].correctIndex];
+        if (answerGiven === correctAnswer){
+            console.log ("Rätt");
+            quiz.score ++;
+            event.submitter.classList.add("correct");
+        }
+        else {
+            console.log("Fel");
+            event.submitter.classList.add("wrong");
+            for (let i = 0; i < 4; i++){
+                if (questionOptions[i].textContent === correctAnswer) {
+                    questionOptions[i].classList.add("correct");
+                }
+            }
+        }
+        quiz.trackRecord.push([answerGiven, correctAnswer]);
+        quiz.questionBank[quiz.currentQuestion].answered = true;
+
+        nextBtn.disabled = false;
+        for (let i = 0; i < 4; i++){
+            questionOptions[i].disabled = true;
+        }
+    });
+
     nextBtn.addEventListener("click", (event) => {
         event.preventDefault();
         if (quiz.currentQuestion < quiz.questionBank.length-1) {

@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta author="Abdalla A, Jeongsook P, Andreas H">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/index.css">
-    <script src="/script/index.js" defer></script>
-    <title>Quiz App group2</title>
+    <link rel="stylesheet" href="styles/quiz1.css">
+    <title>Quiz Spel grupp 2</title>
 </head>
 <body>
-    <h1>Quiz App</h1>
-    <h2>Abdalla</h2>
-    <h2>Jeongsook</h2>
-    <h2>Andreas</h2>
+    <header class="quiz-header">
+        <img src="images/logo-grit.png" alt="Grit logo" class="quiz-logo">
+    </header>
+    
+    <main class="quiz-container" id="quiz-container">
+
+
+        <div class="top-row">
+            <div class="progress-circle"><span id="progress">1</span>/10</div>
+
+            <div class="question-box" id="question">
+                Frågor
+            </div>
+        </div>
+
+        <form class="answers" id="answers"> 
+            <button class="answer-btn">Answer 1</button>
+            <button class="answer-btn">Answer 2</button>
+            <button class="answer-btn">Answer 3</button>
+            <button class="answer-btn">Answer 4</button>
+        </form>
+
+        <div class="bottom-row">
+            <div class="score" id="score">Score: 0%</div>
+
+            <div class="buttons">
+                <button class="next-btn" id="nextBtn" disabled>Nästa</button>
+            </div>
+        </div>
+
+    </main>
+
+    <section id="result" class="result hidden">
+        <h2>Resultat</h2>
+        <p id="result-score"></p>
+        <button id="restartBtn"> Starta om</button>
+    </section>
+
 </body>
+<script src="script/objects.js"></script>
+<script src="script/index.js"></script>
+
+
 </html>
